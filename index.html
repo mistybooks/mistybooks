@@ -239,15 +239,16 @@
     Książki
   </div>
   <div class="section-content">
-    <div class="carousel-wrapper">
-      <button class="carousel-arrow left" onclick="this.nextElementSibling.scrollBy({ left: -300, behavior: 'smooth' });">&#10094;</button>
-      <div class="carousel">
-        <a href="book1.html"><img src="book1.jpg" alt="Książka 1"></a>
-        <a href="book2.html"><img src="book2.jpg" alt="Książka 2"></a>
-        <a href="book3.html"><img src="book3.jpg" alt="Książka 3"></a>
-        <a href="book4.html"><img src="book4.jpg" alt="Książka 4"></a>
-    </div>
-      <button class="carousel-arrow right" onclick="this.previousElementSibling.scrollBy({ left: 300, behavior: 'smooth' });">&#10095;</button>
+    <div class="carousel-wrapper" style="overflow: hidden; max-width: 100%;">
+  <button class="carousel-arrow left" onclick="this.nextElementSibling.scrollBy({ left: -400, behavior: 'smooth' });">&#10094;</button>
+  <div class="carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0;">
+    <a href="book1.html"><img src="book1.jpg" alt="Książka 1"></a>
+    <a href="book2.html"><img src="book2.jpg" alt="Książka 2"></a>
+    <a href="book3.html"><img src="book3.jpg" alt="Książka 3"></a>
+    <a href="book4.html"><img src="book4.jpg" alt="Książka 4"></a>
+    <a href="book5.html"><img src="book5.jpg" alt="Książka 5"></a>
+  </div>
+  <button class="carousel-arrow right" onclick="this.previousElementSibling.scrollBy({ left: 400, behavior: 'smooth' });">&#10095;</button>
     </div>
   </div>
 </section>
@@ -257,16 +258,20 @@
     Zapowiedzi
   </div>
   <div class="section-content">
-    <div class="carousel-wrapper">
-      <button class="carousel-arrow left" onclick="this.nextElementSibling.scrollBy({ left: -300, behavior: 'smooth' });">&#10094;</button>
-      <div class="carousel">
+    <div class="carousel-wrapper" style="overflow: hidden; max-width: 100%;">
+      <button class="carousel-arrow left" onclick="this.nextElementSibling.scrollBy({ left: -400, behavior: 'smooth' });">&#10094;</button>
+      <div class="carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0;">
         <img src="upcoming1.jpg" alt="Zapowiedź 1">
         <img src="upcoming2.jpg" alt="Zapowiedź 2">
         <img src="upcoming3.jpg" alt="Zapowiedź 3">
         <img src="upcoming4.jpg" alt="Zapowiedź 4">
+        <img src="upcoming5.jpg" alt="Zapowiedź 5">
+        <img src="upcoming6.jpg" alt="Zapowiedź 6">
+        <img src="upcoming7.jpg" alt="Zapowiedź 7">
       </div>
-      <button class="carousel-arrow right" onclick="this.previousElementSibling.scrollBy({ left: 300, behavior: 'smooth' });">&#10095;</button>
+      <button class="carousel-arrow right" onclick="this.previousElementSibling.scrollBy({ left: 400, behavior: 'smooth' });">&#10095;</button>
     </div>
+  </div>
 </section>
 
   <section id="submit">
