@@ -5,8 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Misty Books – Kameralne wydawnictwo queerowe</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Avenir Next', Avenir, sans-serif;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #ABA6D0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 2rem;
+            z-index: 1000;
+        }
+
+        nav .logo-text {
+            font-weight: bold;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            text-decoration: underline;
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            const revealOnScroll = () => {
+                const triggerBottom = window.innerHeight * 0.85;
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < triggerBottom) {
+                        section.classList.add('visible');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                revealOnScroll();
+            });
+
+            revealOnScroll();
+        });
+    </script>
 </head>
 <body>
+    <nav>
+        <div class="logo-text">Misty Books</div>
+        <ul>
+            <li><a href="#about">O wydawnictwie</a></li>
+            <li><a href="#catalog">Katalog</a></li>
+            <li><a href="#upcoming">Zapowiedzi</a></li>
+            <li><a href="#publish-with-us">Publikuj</a></li>
+            <li><a href="#authors">Autorzy</a></li>
+            <li><a href="#collaborators">Współpraca</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
     <header>
         <img src="MB_logo.png" alt="Misty Books Logo" class="logo">
         <h1>Misty Books</h1>
