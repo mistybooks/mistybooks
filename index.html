@@ -138,14 +138,24 @@
       color: #828092;
     }
       .carousel {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 1rem 0;
-    }
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
 
-    .carousel img {
+    .books-carousel img {
+  height: 800px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.upcoming-carousel img {
   height: 800px;
   width: 400px;
   border-radius: 10px;
@@ -155,10 +165,15 @@
 }
 
     .carousel-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
     .carousel {
       display: flex;
@@ -168,20 +183,14 @@
       padding: 1rem 0;
     }
 
-    .carousel img {
-      height: 220px;
-      width: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      flex-shrink: 0;
-    }
+    
 
     .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.9);
-  color: #000;
+  color: #ABA6D0;
   border: none;
   cursor: pointer;
   font-size: 2rem;
@@ -192,18 +201,45 @@
 }
 
     .carousel-arrow.left {
-      left: -2rem;
-    }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #ABA6D0;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  left: 5.5rem;
+}
 
     .carousel-arrow.right {
-      right: -2rem;
-    }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #ABA6D0;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  right: 5.5rem;
+}
 
 </style>
 </head>
 <body>
   <div class="top-bar">
-    <div class="brand">Misty Books</div>
+    <div class="brand" style="display: flex; align-items: center; gap: 0.5rem; font-family: 'Avenir Next', Avenir, sans-serif; font-size: 1.2rem;">
+  <span style="font-weight: bold; text-transform: uppercase;">MISTY.BOOKS</span>
+  <span style="font-weight: 300;">| Wydajemy Twoje tęczowe książki!</span>
+</div>
     <div class="social-icons">
       <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook"></a>
       <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
@@ -213,14 +249,14 @@
   </div>
 
   <nav>
-    <ul>
-      <li><a href="#about">O nas</a></li>
-      <li><a href="#books">Książki</a></li>
-
-      <li><a href="#upcoming">Zapowiedzi</a></li>
-      <li><a href="#submit">Publikuj z nami</a></li>
-      <li><a href="#contact">Kontakt</a></li>
-    </ul>
+  <ul style="text-transform: uppercase;">
+    <li><a href="#about">O NAS</a></li>
+    <li><a href="#books">KSIĄŻKI</a></li>
+    <li><a href="#upcoming">ZAPOWIEDZI</a></li>
+    <li><a href="#authors">OSOBY AUTORSKIE</a></li>
+    <li><a href="#submit">PUBLIKUJ Z NAMI</a></li>
+    <li><a href="#contact">KONTAKT</a></li>
+  </ul>
   </nav>
 
   <section id="about">
@@ -235,44 +271,63 @@
   
 
   <section id="books">
-  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; justify-content: flex-start; align-items: flex-start; padding-top: 3rem; padding-left: 2rem; height: auto; min-height: 200px; padding: 2rem; min-width: 200px;">
+  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
     Książki
   </div>
   <div class="section-content">
-    <div class="carousel-wrapper" style="overflow: hidden; max-width: 100%;">
-  <button class="carousel-arrow left" onclick="this.nextElementSibling.scrollBy({ left: -400, behavior: 'smooth' });">&#10094;</button>
-  <div class="carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0;">
-    <a href="book1.html"><img src="book1.jpg" alt="Książka 1"></a>
-    <a href="book2.html"><img src="book2.jpg" alt="Książka 2"></a>
-    <a href="book3.html"><img src="book3.jpg" alt="Książka 3"></a>
-    <a href="book4.html"><img src="book4.jpg" alt="Książka 4"></a>
-    <a href="book5.html"><img src="book5.jpg" alt="Książka 5"></a>
-  </div>
-  <button class="carousel-arrow right" onclick="this.previousElementSibling.scrollBy({ left: 400, behavior: 'smooth' });">&#10095;</button>
+    <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;">
+      <button class="carousel-arrow left" onclick="document.querySelector('#books .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
+      <div class="carousel upcoming-carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0; scroll-snap-type: x mandatory;">
+        <a href="book1.html"><img src="book1.jpg" alt="Książka 1" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="book2.html"><img src="book2.jpg" alt="Książka 2" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="book3.html"><img src="book3.jpg" alt="Książka 3" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="book4.html"><img src="book4.jpg" alt="Książka 4" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="book5.html"><img src="book5.jpg" alt="Książka 5" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+      </div>
+      <button class="carousel-arrow right" onclick="document.querySelector('#books .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
     </div>
   </div>
-</section>
+</section></section>
 
   <section id="upcoming">
   <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
     Zapowiedzi
   </div>
   <div class="section-content">
-    <div class="carousel-wrapper" style="overflow: hidden; max-width: 100%;">
-      <button class="carousel-arrow left" onclick="this.nextElementSibling.scrollBy({ left: -400, behavior: 'smooth' });">&#10094;</button>
-      <div class="carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0;">
-        <img src="upcoming1.jpg" alt="Zapowiedź 1">
-        <img src="upcoming2.jpg" alt="Zapowiedź 2">
-        <img src="upcoming3.jpg" alt="Zapowiedź 3">
-        <img src="upcoming4.jpg" alt="Zapowiedź 4">
-        <img src="upcoming5.jpg" alt="Zapowiedź 5">
+    <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;">
+      <button class="carousel-arrow left" onclick="document.querySelector('#upcoming .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
+      <div class="carousel upcoming-carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0; scroll-snap-type: x mandatory;">
+        <a href="#"><img src="upcoming1.jpg" alt="Zapowiedź 1" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="upcoming2.jpg" alt="Zapowiedź 2" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="upcoming3.jpg" alt="Zapowiedź 3" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="upcoming4.jpg" alt="Zapowiedź 4" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="upcoming5.jpg" alt="Zapowiedź 5" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
       </div>
-      <button class="carousel-arrow right" onclick="this.previousElementSibling.scrollBy({ left: 400, behavior: 'smooth' });">&#10095;</button>
+      <button class="carousel-arrow right" onclick="document.querySelector('#upcoming .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
     </div>
   </div>
 </section>
 
-  <section id="submit">
+<section id="authors">
+  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
+    Osoby<br>autorskie
+  </div>
+  <div class="section-content">
+    <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;">
+      <button class="carousel-arrow left" onclick="document.querySelector('#authors .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
+      <div class="carousel upcoming-carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0; scroll-snap-type: x mandatory;">
+        <a href="#"><img src="author1.jpg" alt="Autor 1" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="author2.jpg" alt="Autor 2" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="author3.jpg" alt="Autor 3" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="author4.jpg" alt="Autor 4" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+        <a href="#"><img src="author5.jpg" alt="Autor 5" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+      </div>
+      <button class="carousel-arrow right" onclick="document.querySelector('#authors .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<section id="submit">
   <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
     Publikuj<br>z nami
   </div>
