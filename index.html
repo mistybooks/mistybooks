@@ -4,38 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Misty Books – Kameralne wydawnictwo queerowe</title>
-  <link rel="stylesheet" href="styles.css" />
   <style>
     html {
       scroll-behavior: smooth;
     }
-
     body {
       margin: 0;
       font-family: 'Avenir Next', Avenir, sans-serif;
       background: #ffffff;
       color: #2C2C2C;
     }
-
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
     }
-
     .top-bar .brand {
       font-weight: bold;
       font-size: 1.5rem;
     }
-
     .top-bar .social-icons img {
       margin-left: 1rem;
       width: 20px;
       height: 20px;
       object-fit: contain;
     }
-
     nav {
       background-color: white;
       border-top: 2px solid #ABA6D0;
@@ -47,26 +41,24 @@
       top: 0;
       z-index: 1000;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 2rem;
       margin: 0;
       padding: 0;
+      text-transform: uppercase;
     }
-
     nav ul li a {
       color: #2C2C2C;
       text-decoration: none;
       font-weight: 500;
     }
-
     nav ul li a:hover,
     nav ul li a.active {
       text-decoration: underline;
     }
-
+    /* Główne sekcje */
     section {
       display: flex;
       justify-content: center;
@@ -75,19 +67,18 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .section-label {
-      width: 200px;
-      min-width: 200px;
-      background-color: #ABA6D0;
-      color: white;
-      font-weight: bold;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
+  width: 200px;
+  height: 200px;
+  background-color: #ABA6D0;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
     .section-content {
       flex: 1;
       padding-left: 2rem;
@@ -95,17 +86,11 @@
       flex-direction: column;
       justify-content: center;
     }
-
-    
-
-    
-
     form {
       display: grid;
       gap: 1rem;
       margin-top: 2rem;
     }
-
     input,
     textarea {
       font-family: inherit;
@@ -114,7 +99,6 @@
       border-radius: 6px;
       font-size: 1rem;
     }
-
     button {
       background-color: #ABA6D0;
       color: white;
@@ -125,11 +109,9 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-
     button:hover {
       background-color: #828092;
     }
-
     footer {
       background-color: #f5f5f8;
       text-align: center;
@@ -137,109 +119,73 @@
       font-size: 0.9rem;
       color: #828092;
     }
-      .carousel {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-}
 
-    .books-carousel img {
-  height: 800px;
-  width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  object-fit: cover;
-}
-
-.upcoming-carousel img {
-  height: 800px;
-  width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  object-fit: cover;
-}
-
-    .carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
+    /* Karuzele */
     .carousel {
       display: flex;
       gap: 1rem;
       overflow-x: auto;
       scroll-behavior: smooth;
       padding: 1rem 0;
+      scroll-snap-type: x mandatory;
     }
-
-    
-
+    .books-carousel img {
+      height: 800px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+      object-fit: cover;
+      scroll-snap-align: start;
+    }
+    .upcoming-carousel img {
+      height: 800px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+      object-fit: cover;
+      scroll-snap-align: start;
+    }
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
     .carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #ABA6D0;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  z-index: 10;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #ABA6D0;
+      border: none;
+      cursor: pointer;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      z-index: 10;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
     .carousel-arrow.left {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #ABA6D0;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  z-index: 10;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  left: 5.5rem;
-}
-
+      left: 5.5rem;
+    }
     .carousel-arrow.right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #ABA6D0;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  z-index: 10;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  right: 5.5rem;
-}
-
-</style>
+      right: 5.5rem;
+    }
+  </style>
 </head>
 <body>
+  <!-- Górny pasek z brandem i socialami -->
   <div class="top-bar">
     <div class="brand" style="display: flex; align-items: center; gap: 0.5rem; font-family: 'Avenir Next', Avenir, sans-serif; font-size: 1.2rem;">
-  <span style="font-weight: bold; text-transform: uppercase;">MISTY.BOOKS</span>
-  <span style="font-weight: 300;">| Wydajemy Twoje tęczowe książki!</span>
-</div>
+      <span style="font-weight: bold; text-transform: uppercase;">MISTY.BOOKS</span>
+      <span style="font-weight: 300;">| Wydajemy Twoje tęczowe książki!</span>
+    </div>
     <div class="social-icons">
       <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook"></a>
       <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
@@ -248,112 +194,105 @@
     </div>
   </div>
 
+  <!-- Menu nawigacyjne -->
   <nav>
-  <ul style="text-transform: uppercase;">
-    <li><a href="#about">O NAS</a></li>
-    <li><a href="#books">KSIĄŻKI</a></li>
-    <li><a href="#upcoming">ZAPOWIEDZI</a></li>
-    <li><a href="#authors">OSOBY AUTORSKIE</a></li>
-    <li><a href="#submit">PUBLIKUJ Z NAMI</a></li>
-    <li><a href="#contact">KONTAKT</a></li>
-  </ul>
+    <ul>
+      <li><a href="#about">O NAS</a></li>
+      <li><a href="#books">KSIĄŻKI</a></li>
+      <li><a href="#upcoming">ZAPOWIEDZI</a></li>
+      <li><a href="#authors">OSOBY AUTORSKIE</a></li>
+      <li><a href="#submit">PUBLIKUJ Z NAMI</a></li>
+      <li><a href="#contact">KONTAKT</a></li>
+    </ul>
   </nav>
 
+  <!-- Sekcja O NAS -->
   <section id="about">
-  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
-    O nas
-  </div>
-  <div class="section-content">
-    <p>Misty Books to niezależne wydawnictwo, które powstało z potrzeby tworzenia i publikowania queerowej literatury. Naszą misją jest oddanie głosu osobom, których historie są pełne emocji, czułości, magii i realności.</p>
-  </div>
-</section>
+    <div class="section-label">O nas</div>
+    <div class="section-content">
+      <p>Misty Books to małe, niezależne wydawnictwo, którego misją jest promowanie queerowej literatury. Wspieramy twórców LGBTQ+ i publikujemy książki pełne emocji, różnorodnych perspektyw i autentycznych historii.</p>
+    </div>
+  </section>
 
-  
-
+  <!-- Sekcja KSIĄŻKI -->
   <section id="books">
-  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
-    Książki
-  </div>
-  <div class="section-content">
-    <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;">
-      <button class="carousel-arrow left" onclick="document.querySelector('#books .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
-      <div class="carousel upcoming-carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0; scroll-snap-type: x mandatory;">
-        <a href="book1.html"><img src="book1.jpg" alt="Książka 1" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="book2.html"><img src="book2.jpg" alt="Książka 2" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="book3.html"><img src="book3.jpg" alt="Książka 3" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="book4.html"><img src="book4.jpg" alt="Książka 4" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="book5.html"><img src="book5.jpg" alt="Książka 5" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+    <div class="section-label">Książki</div>
+    <div class="section-content">
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow left" onclick="document.querySelector('#books .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
+        <div class="carousel books-carousel">
+          <a href="book1.html"><img src="book1.jpg" alt="Książka 1"></a>
+          <a href="book2.html"><img src="book2.jpg" alt="Książka 2"></a>
+          <a href="book3.html"><img src="book3.jpg" alt="Książka 3"></a>
+          <a href="book4.html"><img src="book4.jpg" alt="Książka 4"></a>
+          <a href="book5.html"><img src="book5.jpg" alt="Książka 5"></a>
+        </div>
+        <button class="carousel-arrow right" onclick="document.querySelector('#books .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
       </div>
-      <button class="carousel-arrow right" onclick="document.querySelector('#books .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
     </div>
-  </div>
-</section></section>
+  </section>
 
+  <!-- Sekcja ZAPOWIEDZI -->
   <section id="upcoming">
-  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
-    Zapowiedzi
-  </div>
-  <div class="section-content">
-    <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;">
-      <button class="carousel-arrow left" onclick="document.querySelector('#upcoming .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
-      <div class="carousel upcoming-carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0; scroll-snap-type: x mandatory;">
-        <a href="#"><img src="upcoming1.jpg" alt="Zapowiedź 1" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="upcoming2.jpg" alt="Zapowiedź 2" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="upcoming3.jpg" alt="Zapowiedź 3" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="upcoming4.jpg" alt="Zapowiedź 4" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="upcoming5.jpg" alt="Zapowiedź 5" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+    <div class="section-label">Zapowiedzi</div>
+    <div class="section-content">
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow left" onclick="document.querySelector('#upcoming .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
+        <div class="carousel upcoming-carousel">
+          <a href="#"><img src="upcoming1.jpg" alt="Zapowiedź 1"></a>
+          <a href="#"><img src="upcoming2.jpg" alt="Zapowiedź 2"></a>
+          <a href="#"><img src="upcoming3.jpg" alt="Zapowiedź 3"></a>
+          <a href="#"><img src="upcoming4.jpg" alt="Zapowiedź 4"></a>
+          <a href="#"><img src="upcoming5.jpg" alt="Zapowiedź 5"></a>
+        </div>
+        <button class="carousel-arrow right" onclick="document.querySelector('#upcoming .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
       </div>
-      <button class="carousel-arrow right" onclick="document.querySelector('#upcoming .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="authors">
-  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
-    Osoby<br>autorskie
-  </div>
-  <div class="section-content">
-    <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;">
-      <button class="carousel-arrow left" onclick="document.querySelector('#authors .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
-      <div class="carousel upcoming-carousel" style="display: flex; gap: 1rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0; scroll-snap-type: x mandatory;">
-        <a href="#"><img src="author1.jpg" alt="Autor 1" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="author2.jpg" alt="Autor 2" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="author3.jpg" alt="Autor 3" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="author4.jpg" alt="Autor 4" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
-        <a href="#"><img src="author5.jpg" alt="Autor 5" style="scroll-snap-align: start; width: 400px; height: 800px; object-fit: cover;"></a>
+  <!-- Sekcja OSOBY AUTORSKIE -->
+  <section id="authors">
+    <div class="section-label">Osoby<br>autorskie</div>
+    <div class="section-content">
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow left" onclick="document.querySelector('#authors .carousel').scrollBy({ left: -420, behavior: 'smooth' });">&#10094;</button>
+        <div class="carousel upcoming-carousel">
+          <a href="#"><img src="author1.jpg" alt="Autor 1"></a>
+          <a href="#"><img src="author2.jpg" alt="Autor 2"></a>
+          <a href="#"><img src="author3.jpg" alt="Autor 3"></a>
+          <a href="#"><img src="author4.jpg" alt="Autor 4"></a>
+          <a href="#"><img src="author5.jpg" alt="Autor 5"></a>
+        </div>
+        <button class="carousel-arrow right" onclick="document.querySelector('#authors .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
       </div>
-      <button class="carousel-arrow right" onclick="document.querySelector('#authors .carousel').scrollBy({ left: 420, behavior: 'smooth' });">&#10095;</button>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="submit">
-  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
-    Publikuj<br>z nami
-  </div>
-  <div class="section-content">
-    <p>Tworzysz queerową literaturę? Prześlij nam propozycję na <a href="mailto:kontakt@mistybooks.pl">kontakt@mistybooks.pl</a> – czekamy na Twoją historię.</p>
-  </div>
-</section>
+  <!-- Sekcja PUBLIKUJ Z NAMI -->
+  <section id="submit">
+    <div class="section-label">Publikuj<br>z nami</div>
+    <div class="section-content">
+      <p>Tworzysz queerową literaturę? Prześlij nam propozycję na <a href="mailto:kontakt@mistybooks.pl">kontakt@mistybooks.pl</a> – czekamy na Twoją historię.</p>
+    </div>
+  </section>
 
+  <!-- Sekcja KONTAKT -->
   <section id="contact">
-  <div class="section-label" style="clip-path: polygon(0 0, 100% 0, 0 100%); background-color: #ABA6D0; color: white; text-transform: uppercase; font-weight: bold; font-size: 1.2rem; display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 3rem; padding-left: 2rem; min-width: 200px; min-height: 200px;">
-    Kontakt
-  </div>
-  <div class="section-content" style="flex-direction: row; display: flex; justify-content: space-between; align-items: stretch; gap: 2rem; font-size: 1.1rem;">
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <p style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">+48 506 1575 38</p>
-      <p style="font-size: 1.3rem; font-weight: bold; margin-bottom: 2rem;">biuro@mistybooks.pl</p>
+    <div class="section-label">Kontakt</div>
+    <div class="section-content" style="flex-direction: row; display: flex; justify-content: space-between; align-items: stretch; gap: 2rem; font-size: 1.1rem;">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">+48 506 1575 38</p>
+        <p style="font-size: 1.3rem; font-weight: bold; margin-bottom: 2rem;">biuro@mistybooks.pl</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">Wydawnictwo Misty Books</p>
+        <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">ul. Żegiestowska 13, lok. 17</p>
+        <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">50-542 Wrocław</p>
+        <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">NIP: 8992564737</p>
+        <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">REGON: 528256647</p>
+      </div>
     </div>
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">Wydawnictwo Misty Books</p>
-      <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">ul. Żegiestowska 13, lok. 17</p>
-      <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">50-542 Wrocław</p>
-      <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">NIP: 8992564737</p>
-      <p style="font-size: 1rem; font-weight: 300; margin: 0.3rem 0;">REGON: 528256647</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <footer>
     <p>&copy; 2025 Misty Books. Wszelkie prawa zastrzeżone.</p>
