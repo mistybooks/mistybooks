@@ -1,5 +1,108 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head><meta charset="UTF-8"><title>Książka 1</title></head>
-<body><h1>Szczegóły książki 1</h1></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Książka – Misty Books</title>
+  <style>
+    body {
+      font-family: 'Avenir Next', Avenir, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #2C2C2C;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 4rem;
+    }
+    .book-cover {
+      flex: 1;
+    }
+    .book-cover img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .book-info {
+      flex: 2;
+    }
+    .book-info h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .book-info h3 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #555;
+      margin-top: 0;
+    }
+    .book-meta {
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .button {
+      display: inline-block;
+      background-color: #ABA6D0;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    .section {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    .section h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .section p {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="book-cover">
+      <img src="book1.jpg" alt="Okładka książki">
+    </div>
+    <div class="book-info">
+      <h3>Autor: Jane Doe</h3>
+      <h2>Tytuł książki: Czułość mgieł</h2>
+      <div class="book-meta">
+        <p>Wydanie: 1</p>
+        <p>ISBN: 9788382524192</p>
+        <p>Data premiery: 1 czerwca 2025</p>
+        <p>Liczba stron: 312</p>
+        <p>Format: 135 x 215 mm</p>
+      </div>
+      <a href="#fragment" class="button">Zajrzyj do książki</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h4>OPIS</h4>
+    <p>
+      W porannej mgle, gdzie światło i cień łączą się w miękkim tańcu, ona szukała siebie. 
+      "Czułość mgieł" to opowieść o delikatności, tęsknocie i miłości, która rozkwita tam, gdzie najmniej się jej spodziewamy.
+    </p>
+  </div>
+
+  <div class="section" id="fragment">
+    <h4>FRAGMENT</h4>
+    <p>
+      "Przez zasłonę pary i myśli, próbowała dostrzec kontur jego sylwetki. Był, a może tylko jej się wydawało. 
+      Jego głos – miękki jak pajęczyna – szeptał słowa, które znała z własnych snów."
+    </p>
+  </div>
+</body>
 </html>
